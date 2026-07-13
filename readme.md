@@ -1,4 +1,4 @@
-# seriallane
+# SerialLane
 
 Per-key job serialization. Jobs sharing a key run one at a time, jobs with different keys run in parallel. Lane lifecycle is managed automatically.
 
@@ -58,7 +58,7 @@ if err := svc.Run(ctx); err != nil && !errors.Is(err, context.Canceled) {
 
 ## Errors
 
-| Sentinel | When |
-|---|---|
+| Sentinel            | When                                                                   |
+| ------------------- | ---------------------------------------------------------------------- |
 | `ErrPanicRecovered` | The job function panicked. The original value is in the error message. |
-| `ErrCleanupFailed` | `CleanupStaleLanes` returned an error inside `CleanupService.Run`. |
+| `ErrCleanupFailed`  | `CleanupStaleLanes` returned an error inside `CleanupService.Run`.     |
